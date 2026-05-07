@@ -183,6 +183,7 @@ li{
     font-size: 30px;
     margin-left: 55px;
     padding:20px;
+    margin-top:5px;
 }
 
 .contacts{
@@ -200,7 +201,7 @@ li{
     color: yellow;
 }
 
-.contacts a {
+.contacts i {
   display: inline-block;
   animation: shake 0.5s infinite;
 }
