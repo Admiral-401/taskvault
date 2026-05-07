@@ -189,7 +189,7 @@ li{
 .contacts{
     display:flex;
     align-items:center;
-    justify-content:space-around;
+    
 }
 
 .contacts i{
@@ -232,7 +232,7 @@ li{
 @media (max-width: 600px) {
 
      .container{
-        width: 100%;
+        width: 95%;
         height:auto;
         border-radius: 15px;
         background-Color: yellow;
@@ -300,18 +300,16 @@ li{
 
     .para{
         font-family: "Dancing Script", cursive;
-        font-size: 30px;
-        margin-left: 5px;
-        padding:10px;
+        font-size: 20px;
+        margin-bottom:5px;
+        margin-left:5px;
     }
 
+    .contacts{
+        width:100%;
+
+    }
     .contacts i{
-        font-size: 30px;
-        padding: 20px;
-    }
-
-    .fa-square-whatsapp{
-        margin-right:25px;
-        padding-right:10px;
+        font-size:18px;
     }
 }
