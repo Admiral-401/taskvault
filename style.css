@@ -309,4 +309,9 @@ li{
         font-size: 30px;
         padding: 20px;
     }
+
+    .fa-square-whatsapp{
+        margin-right:25px;
+        padding-right:10px;
+    }
 }
