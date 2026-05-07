@@ -47,6 +47,7 @@ function handleError(message){
             dialog.close();
             dialog.remove();
         })
+        input.value = "";
 }
 
 //function that renders tasks on screen
