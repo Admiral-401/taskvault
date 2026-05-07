@@ -1,0 +1,161 @@
+*{
+    display: block;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container{
+    width: 50%;
+    min-width: 40%;
+    height:auto;
+    border-radius: 15px;
+    background-Color: yellow;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 90px;
+}
+
+.heading{
+    display:flex;
+    align-items:center;
+}
+
+i{
+    margin-right:10px;
+}
+
+.input{
+    width: 90%;
+    min-width: 260px;
+    height:50px;
+    border-radius: 40px;
+    background-color: grey;
+    color: white;
+    padding-left: 5px;
+    padding-right: 10px;
+    display: flex;
+    flex-grow: 1;
+    margin-left:auto;
+    margin-right:auto;
+    align-items: center;
+    justify-content: center;
+    box-shadow:hsla(25%, 20%, 50%, 0.4);
+}
+
+.typing-area{
+    width: 100%;
+    min-width: 100px;
+    display:flex;
+    flex-grow:1;
+    height:auto;
+    outline:none;
+    overflow:hidden;
+    margin-right: -65px;
+    border-radius: 40px;
+    padding: 10px;
+    padding-left: 45px;
+    color: rgb(0, 0, 0);
+    border-color: yellow;
+    outline: yellow;
+    opacity: 0.2;
+}
+
+.add{
+    max-width: 15%;
+    min-width: 60px;
+    height: 35px;
+    margin-right: 10px;
+    border-color: yellow;
+    border-radius: 40px;
+    opacity: 0.3;
+   
+}
+
+.tasks{
+    width: 20%;
+    height:auto;
+    padding: 10px;
+    border-radius: 40px;
+    margin-left: 5px;
+    outline:none;
+    border-color: yellow;
+    opacity: 0.5;
+    background-color: grey;
+    color: black;
+
+}
+
+option{
+    width: 20%;
+    height:auto;
+    padding: 1em;
+    border-radius: 1rem;
+    margin-left: 10px;
+    outline:none;
+    opacity: 0.5;
+    background-color: grey;
+    color: black;
+
+}
+
+.list{
+    width: inherit;
+    min-width: 200px;
+    min-height: 60px;
+    background-color: rgb(92, 90, 90);
+    border-color: red;
+    color:aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    padding: 40px;
+
+}
+
+.done{
+    width: 45px;
+    height:auto;
+    border-radius: 50%;
+    cursor:pointer;
+}
+
+.done.complete{
+    width: 45px;
+    height:auto;
+    border-radius: 50%;
+}
+
+.done.complete:hover{
+    cursor:pointer;
+}
+.remove{
+    width: 45px;
+    height:auto;
+    border-radius: 50%;
+    cursor:pointer;
+}
+
+li{
+    width: 95%;
+    height: 2rem;
+    border-radius:0.5rem;
+    background-color: rgb(205, 214, 205);
+    overflow: hidden;
+    display: flex;
+    align-items:center;
+    color: black;
+    margin-top: 15px;
+}
+
+.task{
+    width: 70%;
+    height:1.5rem;
+    padding-left: 15px;
+}
+
+.complete{
+    width: 70%;
+    height:1.5rem;
+    text-decoration:line-through;
+    opacity: 0.3;
+    font-style:italic;
+}
