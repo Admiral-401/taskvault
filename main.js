@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const items = document.querySelector('.list');
     const input = document.querySelector('.typing-area');
-    const add = document.querySelector('.add');
+    const add = document.querySelector('.fa-plus');
     const message = document.querySelector('.error-message');
     const remove = document.querySelector('.remove')
 

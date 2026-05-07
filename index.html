@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/style.css">
     <title></title>
@@ -12,14 +15,16 @@
         <div class="container" >
 
             <div class="heading">
-                <i class="fa-solid fa-address-card"></i>
+                <i class="fa-solid fa-list-ul"></i>
                 <h2>To-Do</h2>
             </div>
 
             <div class="input">
                 
                 <input type="text" class="typing-area" placeholder="Enter task...">
-                <button class="add">Add</button>
+                <button class="add">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
                 <select class="tasks" data-id='123' name="sort">
                     <option value='all'>All</option>
                     <option value="done-tasks">Complete</option>
@@ -31,7 +36,19 @@
             </ul>
         </div>
     </main>
-
+    <footer class="footer">
+        <p class="para">Mini apps by Eric (github/Admiral-401)</p>
+        <p class="para">for web applications services feel free to contact via links bellow..</p>
+        <div class="contacts">
+            <a href="tel:+254710638294" ><i class="fa-solid fa-mobile"></i></a>
+            <a href="https://www.facebook.com/eric.mureithi.3"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/eric-mureithi-a15aa3102/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/254710638294?text=Thanks%20for%20reaching%20your%20front-end%20engineer!%20I%E2%80%99ll%20get%20back%20to%20you,%20I%E2%80%99m%20probably%20in%20my%20office%20building%20some%20cool%20stuff."
+  target="_blank"
+  rel="noopener noreferrer"><i class="fa-brands fa-square-whatsapp"></i></a>
+            <a href="https://x.com/Ericmunenemure1"><i class="fa-brands fa-square-x-twitter"></i></a>
+        </div>
+    </footer>
    <script type="module" src="/main.js"></script>
 </body>
 </html>
