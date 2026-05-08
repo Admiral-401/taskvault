@@ -151,7 +151,7 @@ li{
     height: 2rem;
     border-radius:0.5rem;
     background-color: rgb(205, 214, 205);
-    overflow: hidden;
+    overflow: scroll;
     display: flex;
     align-items:center;
     color: black;
