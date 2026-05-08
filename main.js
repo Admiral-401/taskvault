@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const add = document.querySelector('.fa-plus');
     const message = document.querySelector('.error-message');
     const remove = document.querySelector('.remove')
+    const select = document.querySelector('.tasks')
 
+    //global variable for tracking handling filtering 
+let filter = 'all';
 
 const errorMessages = {
     invalidText: 'Invalid user input...!',
@@ -52,23 +55,41 @@ function handleError(message){
 
 //function that renders tasks on screen
 
- function renderTasks(){
+//handle change 
+
+select.addEventListener('change', () => {
+   filter = select.value;
+   renderTasks(); 
+}) 
+
+function renderTasks() {
     items.innerHTML = "";
 
-    tasks.forEach(item => {
+    let filteredTasks = tasks;
+        
+    if (filter === "done") {
+        filteredTasks = tasks.filter(t => t.complete);
+    }
+
+    if (filter === "pending") {
+        filteredTasks = tasks.filter(t => !t.complete);
+    }
+
+    filteredTasks.forEach(item => {
         const li = document.createElement('li');
 
         li.dataset.id = item.id;
-        li.setAttribute('class', 'task-item')
+        li.className = 'task-item';
 
         li.innerHTML = `
-        <img src="/done.png" class="done ${item.complete ? 'complete' : ''}">
-        <span class="task ${item.complete ? 'complete' : ''}">${item.text}</span>
-        <img src="/remove.png" class="remove">
-        `
-        items.append(li)
+            <img src="/done.png" class="done ${item.complete ? 'complete' : ''}">
+            <span class="task ${item.complete ? 'complete' : ''}">${item.text}</span>
+            <img src="/remove.png" class="remove">
+        `;
+
+        items.append(li);
     });
- }
+}
 
  //function that handles input data
 
@@ -127,19 +148,33 @@ document.addEventListener('click', e => {
        renderTasks();
      }
          //handle delete
-        if(e.target.classList.contains('remove')){
+        if(e.target.closest('.remove')){
+
+            console.log("delete clicked");
 
             const task = tasks.find(t => t.id === id)
            
             if(task && task.complete === false){
                 handleError(errorMessages.notDone);
             }else if(task && task.complete === true){
-                const index = tasks.findIndex(t => t.id === id);
-                tasks.splice(index, 1);
-            }
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-            renderTasks()
+
+                li.classList.add('fall');
+                
+                li.addEventListener('animationend', () => {
+                    
+                    setTimeout(() => {
+                        const index = tasks.findIndex(t => t.id === id);
+                        tasks.splice(index, 1);
+
+                        localStorage.setItem('tasks', JSON.stringify(tasks));
+                        renderTasks();
+                    }, 50);
+
+                })
+               
         }
+    }
+
     });
 
 
