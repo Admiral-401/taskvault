@@ -91,7 +91,7 @@
     border-color: yellow;
     opacity: 0.5;
     background-color: grey;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 option{
@@ -176,6 +176,7 @@ li{
     width: 70%;
     height:1.5rem;
     padding-left: 15px;
+    color:aliceblue;
 }
 
 .complete{
@@ -192,7 +193,8 @@ li{
     margin-left:auto;
     margin-right:auto;
     margin-bottom:20px;
-    background-color:blueviolet;
+    background-color:rgb(26, 23, 26);
+    color:white;
 }
 
 .para{
@@ -206,6 +208,8 @@ li{
 .contacts{
     display:flex;
     align-items:center;
+    justify-content:center;
+    background-color:rgb(19, 16, 40);
     
 }
 
@@ -244,7 +248,13 @@ li{
     transform: translateX(0);
   }
 }
-
+ .rights{
+    background-color: whitesmoke;
+    color: black;
+    font-family: "Alumni Sans", sans-serif;
+    display:flex;
+    justify-content: center;
+ }
 /*media queries / responsive design*/
 @media (max-width: 600px) {
 
