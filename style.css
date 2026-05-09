@@ -90,6 +90,12 @@ title{
 .fa-plus:hover{
     cursor:pointer;
 }
+
+.edit{
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
 .tasks{
     width: 25%;
     height:auto;
@@ -133,6 +139,7 @@ option{
     height:auto;
     border-radius: 50%;
     cursor:pointer;
+    margin-left:5px;
 }
 
 .done.complete{
@@ -157,6 +164,11 @@ option{
 
 .task-item{
     display:flex;
+    flex:1;
+    min-width:0;
+    word-break: break-word;
+    overflow-x:auto;
+    white-space: noWrap;
 }
 
 li{
@@ -328,6 +340,10 @@ li{
         margin-left: 5px;
     }
 
+    .fa-plus{
+        margin-left:5px;
+    }
+    
     .footer{
         width:100%;
         height:auto;

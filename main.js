@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //global variable for tracking handling filtering 
 let filter = 'all';
+let editing = null;
 
 const errorMessages = {
     invalidText: 'Invalid user input...!',
@@ -101,29 +102,49 @@ function addTask(inputText){
     complete: false,
     }
 
-    if (typeof inputText !== "string" || inputText.trim() === ""){
-        handleError(errorMessages.invalidText);
-    } else if(inputText.length >= 40){
-        handleError(errorMessages.tooLong);
-    } else if(inputText.length < 3){
-        handleError(errorMessages.tooShort);
-    } else if(typeof inputText === "string" || inputText !== ""){
+    if(editing){
+        const task = tasks.find(t => t.id === editing);
+       
+        //dont edit if task is marked complete
+        if(task.complete) return;
+            task.text = input.value;
+
+            editing = null;
+
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            renderTasks();
+
+            input.value = '';
+            input.focus();
+
+    } else {
+        if (typeof inputText !== "string" || inputText.trim() === ""){
+            handleError(errorMessages.invalidText);
+        } else if(inputText.length >= 40){
+            handleError(errorMessages.tooLong);
+        } else if(inputText.length < 3){
+            handleError(errorMessages.tooShort);
+        } else if(typeof inputText === "string" || inputText !== ""){
         
-        newTask.text = inputText;
+            newTask.text = inputText;
 
-        tasks.push(newTask);
-    
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        renderTasks();
+            tasks.push(newTask);
+            
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            renderTasks();
 
-        input.value = "";
-        input.focus();
-        } 
+            input.value = "";
+            input.focus();
+        }
+    }
+
 }
 
 console.log(tasks);
 
 add.addEventListener("click", () => addTask(input.value));
+
+//Enter keydown event adds task
 input.addEventListener('keydown', e => {
     if(e.key === 'Enter'){
        addTask(input.value);
@@ -151,7 +172,14 @@ document.addEventListener('click', e => {
 
         //handle edit
         if(e.target.classList.contains('edit')){
-            console.log('edit me please!')
+            console.log('edit me please!');
+            const task = tasks.find(t => t.id === id);
+
+            if(task.complete) return;
+            input.value = task.text;
+
+            editing = id;
+           
         }
 
          //handle delete
