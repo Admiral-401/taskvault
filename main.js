@@ -85,6 +85,7 @@ function renderTasks() {
             <img src="/done.png" class="done ${item.complete ? 'complete' : ''}">
             <span class="task ${item.complete ? 'complete' : ''}">${item.text}</span>
             <img src="/remove.png" class="remove">
+            <img src="/edit.png" class="edit">
         `;
 
         items.append(li);
@@ -147,6 +148,12 @@ document.addEventListener('click', e => {
         localStorage.setItem('tasks', JSON.stringify(tasks));
        renderTasks();
      }
+
+        //handle edit
+        if(e.target.classList.contains('edit')){
+            console.log('edit me please!')
+        }
+
          //handle delete
         if(e.target.closest('.remove')){
 

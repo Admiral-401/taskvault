@@ -142,6 +142,10 @@ option{
     cursor:pointer;
 }
 
+.edit{
+   cursor:text;
+}
+
 .task-item{
     display:flex;
 }
