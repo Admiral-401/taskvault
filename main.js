@@ -106,14 +106,18 @@ function addTask(inputText){
         //dont edit if task is marked complete
         if(task.complete) return;
         
-        task.text = input.value;
-        if(input.value === ""){
+        if(input.value.trim() === ""){
             handleError(errorMessages.invalidText);
+            return;
         }
-            editing = null;
+        
+        task.text = input.value;
+        
 
             localStorage.setItem('tasks', JSON.stringify(tasks));
             renderTasks();
+
+            editing = null;
 
             input.value = '';
             input.focus();
