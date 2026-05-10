@@ -54,8 +54,6 @@ function handleError(message){
         input.value = "";
 }
 
-//function that renders tasks on screen
-
 //handle change 
 
 select.addEventListener('change', () => {
@@ -107,8 +105,11 @@ function addTask(inputText){
        
         //dont edit if task is marked complete
         if(task.complete) return;
-            task.text = input.value;
-
+        
+        task.text = input.value;
+        if(input.value === ""){
+            handleError(errorMessages.invalidText);
+        }
             editing = null;
 
             localStorage.setItem('tasks', JSON.stringify(tasks));
