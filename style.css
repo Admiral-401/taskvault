@@ -183,7 +183,7 @@ li{
 }
 
 @keyframes fall{
-    to{transform: translateY(150px) rotate(360deg);
+    to{transform: translateY(150px) rotate(30deg);
         opacity: 0;
     }
 }
